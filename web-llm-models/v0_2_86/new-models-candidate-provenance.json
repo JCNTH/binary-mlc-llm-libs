@@ -1,0 +1,412 @@
+{
+  "status": "candidate; HF uploads on hold; release integration pending",
+  "webllm_version": "0.2.86",
+  "web_runtime_version": "0.28.0-dev0",
+  "sources": {
+    "mlc_llm": {
+      "repository": "https://github.com/JCNTH/mlc-llm",
+      "branch": "codex/release-verification",
+      "commit": "5e824377af7fc959d989ddc52dd44a55c7638f49",
+      "merged_softmax_fix": "https://github.com/mlc-ai/mlc-llm/pull/3580"
+    },
+    "tvm": {
+      "repository": "https://github.com/akaashrp/tvm",
+      "release_base_commit": "be03dc94b001269b88ae010d2ac352256be55579",
+      "local_checkout_commit": "233ef1d298bee7f4370eaea87765fc9be4960982",
+      "local_patch_note": "Metal timer fix on the release base; WebGPU uses the existing LLVM17 compiler build."
+    }
+  },
+  "toolchain": {
+    "python": "Python 3.12.14",
+    "emscripten": "emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.56 (cf90417346b78455089e64eb909d71d091ecc055)\nCopyright (C) 2014 the Emscripten authors (see AUTHORS.txt)\nThis is free and open source software under the MIT license.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+    "tvm_llvm": "17.0.6",
+    "TVM_NUM_THREADS": "4",
+    "BINARYEN_CORES": "2"
+  },
+  "bitcode_sha256": {
+    "mlc_wasm_runtime.bc": "c264de85f69ef6eed5a787da58a10a82566fce7bc0ef33b72bd91b40d1a07422",
+    "tvmjs_support.bc": "40d5f8d3d65bd652fe6ec1e0c6dc616f0507383fa1bdd934547aa71994f6e2ab",
+    "wasm_runtime.bc": "4755d448d364458c65f045e50cd1d3717dcd2b30f8e606c7082791546ed1b1f5",
+    "webgpu_runtime.bc": "911c1fbe27bc7faec740d6e9d3523af103a3b0b84c5c3d5582a67120c377912e"
+  },
+  "limitations": [
+    "The unchanged global build-manifest sources describe the 224 pre-existing libraries, not these 16 candidates. The default rebuild.py source check cannot reproduce these candidates.",
+    "TVM bitcode was rebuilt locally and differs from the original manifest hashes; runtime ABI pairing must be verified by browser loading.",
+    "config_source.revision remains TBD-after-upload because HF uploads are on hold. Source-model revisions below identify input checkpoints, not published MLC packages.",
+    "Maximum-context compilation and metadata do not alone establish near-limit browser generation or numerical parity."
+  ],
+  "libraries": [
+    {
+      "path": "base/LFM2.5-350M-q4f16_1_cs1k-webgpu.wasm",
+      "sha256": "f9adc9faf374eae5fbb4e8bea3decb02b689a4ad3d059da2da8dc4f95c09dbe0",
+      "bytes": 5879457,
+      "config": "configs/LFM2.5-350M-q4f16_1_cs1k-webgpu.json",
+      "config_sha256": "a1df888e5a8790ba4bc5be0311c31ac9ad4327ff222922778d108a8a7aea8e77",
+      "compile_args": [
+        "--quantization",
+        "q4f16_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024"
+      ],
+      "context_window_size": 128000,
+      "prefill_chunk_size": 1024,
+      "source_model": "LiquidAI/LFM2.5-350M",
+      "source_revision": "9e6c6ccf47cd318696e137d381a7ded8fe4df09f",
+      "source_weights_sha256": "1c9c77a4471a7f590f85240f74ed1fc26df7fbde88c3006724e2f93ca993ea4e",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "sg32/LFM2.5-350M-q4f16_1_cs1k-webgpu.wasm",
+      "sha256": "1f56d9049e1be4624cdf01acf3788f2d89fc7428f54274044193f5d9351571db",
+      "bytes": 5880481,
+      "config": "configs/LFM2.5-350M-q4f16_1_cs1k-webgpu.json",
+      "config_sha256": "a1df888e5a8790ba4bc5be0311c31ac9ad4327ff222922778d108a8a7aea8e77",
+      "compile_args": [
+        "--quantization",
+        "q4f16_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024",
+        "--enable-subgroups"
+      ],
+      "context_window_size": 128000,
+      "prefill_chunk_size": 1024,
+      "source_model": "LiquidAI/LFM2.5-350M",
+      "source_revision": "9e6c6ccf47cd318696e137d381a7ded8fe4df09f",
+      "source_weights_sha256": "1c9c77a4471a7f590f85240f74ed1fc26df7fbde88c3006724e2f93ca993ea4e",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "base/LFM2.5-350M-q4f32_1_cs1k-webgpu.wasm",
+      "sha256": "60633e268e35b89d738179d5a49ce79ba4ecbec009f28e47fc9996fd2cd5009c",
+      "bytes": 5823006,
+      "config": "configs/LFM2.5-350M-q4f32_1_cs1k-webgpu.json",
+      "config_sha256": "feb66854354c7ce8ada1de8669c1ac929e9561c759ed98d4d597064dfea0df84",
+      "compile_args": [
+        "--quantization",
+        "q4f32_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024"
+      ],
+      "context_window_size": 128000,
+      "prefill_chunk_size": 1024,
+      "source_model": "LiquidAI/LFM2.5-350M",
+      "source_revision": "9e6c6ccf47cd318696e137d381a7ded8fe4df09f",
+      "source_weights_sha256": "1c9c77a4471a7f590f85240f74ed1fc26df7fbde88c3006724e2f93ca993ea4e",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "sg32/LFM2.5-350M-q4f32_1_cs1k-webgpu.wasm",
+      "sha256": "c467dba991729fe2b6a9865e131a1cf3d4bc12d2208f518c9a3a7684f1ebf0d6",
+      "bytes": 5824056,
+      "config": "configs/LFM2.5-350M-q4f32_1_cs1k-webgpu.json",
+      "config_sha256": "feb66854354c7ce8ada1de8669c1ac929e9561c759ed98d4d597064dfea0df84",
+      "compile_args": [
+        "--quantization",
+        "q4f32_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024",
+        "--enable-subgroups"
+      ],
+      "context_window_size": 128000,
+      "prefill_chunk_size": 1024,
+      "source_model": "LiquidAI/LFM2.5-350M",
+      "source_revision": "9e6c6ccf47cd318696e137d381a7ded8fe4df09f",
+      "source_weights_sha256": "1c9c77a4471a7f590f85240f74ed1fc26df7fbde88c3006724e2f93ca993ea4e",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "base/LFM2.5-1.2B-Instruct-q4f16_1_cs1k-webgpu.wasm",
+      "sha256": "8aa60b692674a6ce9ad40e8599d198affa8f85d01c45250e57de8d4e66d6df3c",
+      "bytes": 5897043,
+      "config": "configs/LFM2.5-1.2B-Instruct-q4f16_1_cs1k-webgpu.json",
+      "config_sha256": "4cb19179c428a0b4c354810fecb338cb561fa8f4acfe598bdf78308ab8610e2c",
+      "compile_args": [
+        "--quantization",
+        "q4f16_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024"
+      ],
+      "context_window_size": 128000,
+      "prefill_chunk_size": 1024,
+      "source_model": "LiquidAI/LFM2.5-1.2B-Instruct",
+      "source_revision": "0f604ada3f766f9f257460c4c9f0b5d6f69d431b",
+      "source_weights_sha256": "1ba63d9adb03ae43581db0e136e4416febe0441aff7296397bd455fb6017f73a",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "sg32/LFM2.5-1.2B-Instruct-q4f16_1_cs1k-webgpu.wasm",
+      "sha256": "8588fcf147ba55674b2a1577f72e8c9557498c7745dada000a479bb9193dc01c",
+      "bytes": 5898066,
+      "config": "configs/LFM2.5-1.2B-Instruct-q4f16_1_cs1k-webgpu.json",
+      "config_sha256": "4cb19179c428a0b4c354810fecb338cb561fa8f4acfe598bdf78308ab8610e2c",
+      "compile_args": [
+        "--quantization",
+        "q4f16_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024",
+        "--enable-subgroups"
+      ],
+      "context_window_size": 128000,
+      "prefill_chunk_size": 1024,
+      "source_model": "LiquidAI/LFM2.5-1.2B-Instruct",
+      "source_revision": "0f604ada3f766f9f257460c4c9f0b5d6f69d431b",
+      "source_weights_sha256": "1ba63d9adb03ae43581db0e136e4416febe0441aff7296397bd455fb6017f73a",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "base/LFM2.5-1.2B-Instruct-q4f32_1_cs1k-webgpu.wasm",
+      "sha256": "4dcd127e5bec023fa36226770b6f366291579393e1993a86a52e154cbb6e1f1e",
+      "bytes": 5840716,
+      "config": "configs/LFM2.5-1.2B-Instruct-q4f32_1_cs1k-webgpu.json",
+      "config_sha256": "cb0ecab2d54663e4f99d046f6db0fa10eef7f217dfe38672b0c4aed32e4f3eaa",
+      "compile_args": [
+        "--quantization",
+        "q4f32_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024"
+      ],
+      "context_window_size": 128000,
+      "prefill_chunk_size": 1024,
+      "source_model": "LiquidAI/LFM2.5-1.2B-Instruct",
+      "source_revision": "0f604ada3f766f9f257460c4c9f0b5d6f69d431b",
+      "source_weights_sha256": "1ba63d9adb03ae43581db0e136e4416febe0441aff7296397bd455fb6017f73a",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "sg32/LFM2.5-1.2B-Instruct-q4f32_1_cs1k-webgpu.wasm",
+      "sha256": "c4a4122f6bae6228c5c08e5585ed571d13db3c17d55625ed5456573557d08f44",
+      "bytes": 5841764,
+      "config": "configs/LFM2.5-1.2B-Instruct-q4f32_1_cs1k-webgpu.json",
+      "config_sha256": "cb0ecab2d54663e4f99d046f6db0fa10eef7f217dfe38672b0c4aed32e4f3eaa",
+      "compile_args": [
+        "--quantization",
+        "q4f32_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024",
+        "--enable-subgroups"
+      ],
+      "context_window_size": 128000,
+      "prefill_chunk_size": 1024,
+      "source_model": "LiquidAI/LFM2.5-1.2B-Instruct",
+      "source_revision": "0f604ada3f766f9f257460c4c9f0b5d6f69d431b",
+      "source_weights_sha256": "1ba63d9adb03ae43581db0e136e4416febe0441aff7296397bd455fb6017f73a",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "base/MiniCPM5-2B-q4f16_1_cs1k-webgpu.wasm",
+      "sha256": "be48d323b26e7bbf8f8e5be0f64f891048da6a36b7384fccb5a2de65452d3650",
+      "bytes": 7328694,
+      "config": "configs/MiniCPM5-2B-q4f16_1_cs1k-webgpu.json",
+      "config_sha256": "e3d138119a997e4b287d268a9438ecc3b42817bf9eb8ecb1bde70bc95ba14a63",
+      "compile_args": [
+        "--quantization",
+        "q4f16_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024"
+      ],
+      "context_window_size": 131072,
+      "prefill_chunk_size": 1024,
+      "source_model": "openbmb/MiniCPM5-2B",
+      "source_revision": "f97400052a43d642bbc6e9975e2397e3ae6a6b52",
+      "source_weights_sha256": "14fb8e7f0a18d53d1f239773758bf581cee7e456a4523a54622c3a245b64402c",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "sg32/MiniCPM5-2B-q4f16_1_cs1k-webgpu.wasm",
+      "sha256": "cd8892973a5453ac1a0f8a3308f256cd440a9ee6d56616d14372d7a4671aa18c",
+      "bytes": 7329242,
+      "config": "configs/MiniCPM5-2B-q4f16_1_cs1k-webgpu.json",
+      "config_sha256": "e3d138119a997e4b287d268a9438ecc3b42817bf9eb8ecb1bde70bc95ba14a63",
+      "compile_args": [
+        "--quantization",
+        "q4f16_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024",
+        "--enable-subgroups"
+      ],
+      "context_window_size": 131072,
+      "prefill_chunk_size": 1024,
+      "source_model": "openbmb/MiniCPM5-2B",
+      "source_revision": "f97400052a43d642bbc6e9975e2397e3ae6a6b52",
+      "source_weights_sha256": "14fb8e7f0a18d53d1f239773758bf581cee7e456a4523a54622c3a245b64402c",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "base/MiniCPM5-2B-q4f32_1_cs1k-webgpu.wasm",
+      "sha256": "4dbd725b564f3a77f230e863b497fe15ecfb28b72fd724fc0bba6cef96165a20",
+      "bytes": 7072887,
+      "config": "configs/MiniCPM5-2B-q4f32_1_cs1k-webgpu.json",
+      "config_sha256": "becf3ee864c3f69e28524bc69d3539cd4204a05d0759b99ec9caf0e5e58dca9c",
+      "compile_args": [
+        "--quantization",
+        "q4f32_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024"
+      ],
+      "context_window_size": 131072,
+      "prefill_chunk_size": 1024,
+      "source_model": "openbmb/MiniCPM5-2B",
+      "source_revision": "f97400052a43d642bbc6e9975e2397e3ae6a6b52",
+      "source_weights_sha256": "14fb8e7f0a18d53d1f239773758bf581cee7e456a4523a54622c3a245b64402c",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "sg32/MiniCPM5-2B-q4f32_1_cs1k-webgpu.wasm",
+      "sha256": "9f863cbe59aadb0b70df263c3c090ab2cc24545533e2e5a266f6dbe74af29b35",
+      "bytes": 7073463,
+      "config": "configs/MiniCPM5-2B-q4f32_1_cs1k-webgpu.json",
+      "config_sha256": "becf3ee864c3f69e28524bc69d3539cd4204a05d0759b99ec9caf0e5e58dca9c",
+      "compile_args": [
+        "--quantization",
+        "q4f32_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024",
+        "--enable-subgroups"
+      ],
+      "context_window_size": 131072,
+      "prefill_chunk_size": 1024,
+      "source_model": "openbmb/MiniCPM5-2B",
+      "source_revision": "f97400052a43d642bbc6e9975e2397e3ae6a6b52",
+      "source_weights_sha256": "14fb8e7f0a18d53d1f239773758bf581cee7e456a4523a54622c3a245b64402c",
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "base/SmolLM3-3B-q4f16_1_cs1k-webgpu.wasm",
+      "sha256": "7fa7957c0e8a3aff42a3f5e404c5787aceb1a3b589375c890a931ec48fd8df5f",
+      "bytes": 7168792,
+      "config": "configs/SmolLM3-3B-q4f16_1_cs1k-webgpu.json",
+      "config_sha256": "c6b8c70e80f57812ec704457cbe8d7000f1de67d9a1bfd7b97cb7ed2357549bd",
+      "compile_args": [
+        "--quantization",
+        "q4f16_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024"
+      ],
+      "context_window_size": 65536,
+      "prefill_chunk_size": 1024,
+      "source_model": "HuggingFaceTB/SmolLM3-3B",
+      "source_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+      "source_weights_sha256": {
+        "model-00001-of-00002.safetensors": "e5eed4113a925264c33e3cdf76cd9f547c06a207ef2270914a7274a2bf685ffd",
+        "model-00002-of-00002.safetensors": "6c3ad90646457295723e4da5ee8afac47006e20407b122df5174693dd8d68a43"
+      },
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "sg32/SmolLM3-3B-q4f16_1_cs1k-webgpu.wasm",
+      "sha256": "794c2d148308df4346049d1f3b31089caca2566602415089b4e7fde312fc897e",
+      "bytes": 7168457,
+      "config": "configs/SmolLM3-3B-q4f16_1_cs1k-webgpu.json",
+      "config_sha256": "c6b8c70e80f57812ec704457cbe8d7000f1de67d9a1bfd7b97cb7ed2357549bd",
+      "compile_args": [
+        "--quantization",
+        "q4f16_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024",
+        "--enable-subgroups"
+      ],
+      "context_window_size": 65536,
+      "prefill_chunk_size": 1024,
+      "source_model": "HuggingFaceTB/SmolLM3-3B",
+      "source_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+      "source_weights_sha256": {
+        "model-00001-of-00002.safetensors": "e5eed4113a925264c33e3cdf76cd9f547c06a207ef2270914a7274a2bf685ffd",
+        "model-00002-of-00002.safetensors": "6c3ad90646457295723e4da5ee8afac47006e20407b122df5174693dd8d68a43"
+      },
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "base/SmolLM3-3B-q4f32_1_cs1k-webgpu.wasm",
+      "sha256": "51a31723b57e3ada4c544c290116bcbd4d35911d30de9b3328aad9b0a9ddae45",
+      "bytes": 6940515,
+      "config": "configs/SmolLM3-3B-q4f32_1_cs1k-webgpu.json",
+      "config_sha256": "f8e30c747a947c5b7473aa6b85da0d74e5fe55c258bb52b2adfc42beb0560142",
+      "compile_args": [
+        "--quantization",
+        "q4f32_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024"
+      ],
+      "context_window_size": 65536,
+      "prefill_chunk_size": 1024,
+      "source_model": "HuggingFaceTB/SmolLM3-3B",
+      "source_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+      "source_weights_sha256": {
+        "model-00001-of-00002.safetensors": "e5eed4113a925264c33e3cdf76cd9f547c06a207ef2270914a7274a2bf685ffd",
+        "model-00002-of-00002.safetensors": "6c3ad90646457295723e4da5ee8afac47006e20407b122df5174693dd8d68a43"
+      },
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    },
+    {
+      "path": "sg32/SmolLM3-3B-q4f32_1_cs1k-webgpu.wasm",
+      "sha256": "ba1ecabc8c4a637989a8df410b624897c9d4cdb58be59b3beb875755960a4ebd",
+      "bytes": 6940208,
+      "config": "configs/SmolLM3-3B-q4f32_1_cs1k-webgpu.json",
+      "config_sha256": "f8e30c747a947c5b7473aa6b85da0d74e5fe55c258bb52b2adfc42beb0560142",
+      "compile_args": [
+        "--quantization",
+        "q4f32_1",
+        "--device",
+        "webgpu",
+        "--overrides",
+        "prefill_chunk_size=1024",
+        "--enable-subgroups"
+      ],
+      "context_window_size": 65536,
+      "prefill_chunk_size": 1024,
+      "source_model": "HuggingFaceTB/SmolLM3-3B",
+      "source_revision": "a07cc9a04f16550a088caea529712d1d335b0ac1",
+      "source_weights_sha256": {
+        "model-00001-of-00002.safetensors": "e5eed4113a925264c33e3cdf76cd9f547c06a207ef2270914a7274a2bf685ffd",
+        "model-00002-of-00002.safetensors": "6c3ad90646457295723e4da5ee8afac47006e20407b122df5174693dd8d68a43"
+      },
+      "config_transform": "Generated MLC configuration with top-level and model_config context_window_size set to HF max_position_embeddings; prefill_chunk_size retained at 1024.",
+      "parameter_schema_status": "passed"
+    }
+  ]
+}

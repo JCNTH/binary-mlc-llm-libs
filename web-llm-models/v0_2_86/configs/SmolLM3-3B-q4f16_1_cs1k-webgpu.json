@@ -12,7 +12,7 @@
     "tie_word_embeddings": true,
     "position_embedding_base": 5000000.0,
     "rope_scaling": null,
-    "context_window_size": 4096,
+    "context_window_size": 65536,
     "prefill_chunk_size": 1024,
     "num_key_value_heads": 4,
     "head_dim": 128,
@@ -61,7 +61,7 @@
     "no_rope_layer_interval": 4
   },
   "vocab_size": 128256,
-  "context_window_size": 4096,
+  "context_window_size": 65536,
   "sliding_window_size": -1,
   "prefill_chunk_size": 1024,
   "attention_sink_size": -1,

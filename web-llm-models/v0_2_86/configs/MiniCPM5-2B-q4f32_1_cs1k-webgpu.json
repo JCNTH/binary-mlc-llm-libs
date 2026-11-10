@@ -12,7 +12,7 @@
     "tie_word_embeddings": false,
     "position_embedding_base": 5000000,
     "rope_scaling": null,
-    "context_window_size": 4096,
+    "context_window_size": 131072,
     "prefill_chunk_size": 1024,
     "num_key_value_heads": 2,
     "head_dim": 128,
@@ -22,7 +22,7 @@
     "disaggregation": false
   },
   "vocab_size": 130560,
-  "context_window_size": 4096,
+  "context_window_size": 131072,
   "sliding_window_size": -1,
   "prefill_chunk_size": 1024,
   "attention_sink_size": -1,
