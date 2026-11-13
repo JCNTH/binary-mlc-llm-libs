@@ -1,6 +1,6 @@
 {
-  "libraries": 240,
-  "checks": 350,
+  "libraries": 224,
+  "checks": 334,
   "failed": 0,
   "results": [
     {
@@ -1856,94 +1856,6 @@
       "errors": []
     },
     {
-      "model_id": "MiniCPM5-2B-q4f16_1-MLC",
-      "variant": "base",
-      "library": "base/MiniCPM5-2B-q4f16_1_cs1k-webgpu.wasm",
-      "library_sha256": "be48d323b26e7bbf8f8e5be0f64f891048da6a36b7384fccb5a2de65452d3650",
-      "parameter_count": 425,
-      "symbolic_dimensions": {
-        "vocab_size": 130560
-      },
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "MiniCPM5-2B-q4f32_1-MLC",
-      "variant": "base",
-      "library": "base/MiniCPM5-2B-q4f32_1_cs1k-webgpu.wasm",
-      "library_sha256": "4dbd725b564f3a77f230e863b497fe15ecfb28b72fd724fc0bba6cef96165a20",
-      "parameter_count": 425,
-      "symbolic_dimensions": {
-        "vocab_size": 130560
-      },
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "SmolLM3-3B-q4f16_1-MLC",
-      "variant": "base",
-      "library": "base/SmolLM3-3B-q4f16_1_cs1k-webgpu.wasm",
-      "library_sha256": "7fa7957c0e8a3aff42a3f5e404c5787aceb1a3b589375c890a931ec48fd8df5f",
-      "parameter_count": 363,
-      "symbolic_dimensions": {
-        "vocab_size": 128256
-      },
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "SmolLM3-3B-q4f32_1-MLC",
-      "variant": "base",
-      "library": "base/SmolLM3-3B-q4f32_1_cs1k-webgpu.wasm",
-      "library_sha256": "51a31723b57e3ada4c544c290116bcbd4d35911d30de9b3328aad9b0a9ddae45",
-      "parameter_count": 363,
-      "symbolic_dimensions": {
-        "vocab_size": 128256
-      },
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "LFM2.5-1.2B-Instruct-q4f16_1-MLC",
-      "variant": "base",
-      "library": "base/LFM2.5-1.2B-Instruct-q4f16_1_cs1k-webgpu.wasm",
-      "library_sha256": "8aa60b692674a6ce9ad40e8599d198affa8f85d01c45250e57de8d4e66d6df3c",
-      "parameter_count": 185,
-      "symbolic_dimensions": {},
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "LFM2.5-1.2B-Instruct-q4f32_1-MLC",
-      "variant": "base",
-      "library": "base/LFM2.5-1.2B-Instruct-q4f32_1_cs1k-webgpu.wasm",
-      "library_sha256": "4dcd127e5bec023fa36226770b6f366291579393e1993a86a52e154cbb6e1f1e",
-      "parameter_count": 185,
-      "symbolic_dimensions": {},
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "LFM2.5-350M-q4f16_1-MLC",
-      "variant": "base",
-      "library": "base/LFM2.5-350M-q4f16_1_cs1k-webgpu.wasm",
-      "library_sha256": "f9adc9faf374eae5fbb4e8bea3decb02b689a4ad3d059da2da8dc4f95c09dbe0",
-      "parameter_count": 185,
-      "symbolic_dimensions": {},
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "LFM2.5-350M-q4f32_1-MLC",
-      "variant": "base",
-      "library": "base/LFM2.5-350M-q4f32_1_cs1k-webgpu.wasm",
-      "library_sha256": "60633e268e35b89d738179d5a49ce79ba4ecbec009f28e47fc9996fd2cd5009c",
-      "parameter_count": 185,
-      "symbolic_dimensions": {},
-      "status": "passed",
-      "errors": []
-    },
-    {
       "model_id": "Llama-3.2-1B-Instruct-q4f32_1-MLC",
       "variant": "sg32",
       "library": "sg32/Llama-3.2-1B-Instruct-q4f32_1_cs1k-webgpu.wasm",
@@ -3791,94 +3703,6 @@
       "library": "sg32/gemma-4-E2B-it-q4f32_1_cs512-webgpu.wasm",
       "library_sha256": "b1ae0970eca2c35758d90accecf96ade33f537d3bcb8a037500e6fc4747241cf",
       "parameter_count": 1682,
-      "symbolic_dimensions": {},
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "MiniCPM5-2B-q4f16_1-MLC",
-      "variant": "sg32",
-      "library": "sg32/MiniCPM5-2B-q4f16_1_cs1k-webgpu.wasm",
-      "library_sha256": "cd8892973a5453ac1a0f8a3308f256cd440a9ee6d56616d14372d7a4671aa18c",
-      "parameter_count": 425,
-      "symbolic_dimensions": {
-        "vocab_size": 130560
-      },
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "MiniCPM5-2B-q4f32_1-MLC",
-      "variant": "sg32",
-      "library": "sg32/MiniCPM5-2B-q4f32_1_cs1k-webgpu.wasm",
-      "library_sha256": "9f863cbe59aadb0b70df263c3c090ab2cc24545533e2e5a266f6dbe74af29b35",
-      "parameter_count": 425,
-      "symbolic_dimensions": {
-        "vocab_size": 130560
-      },
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "SmolLM3-3B-q4f16_1-MLC",
-      "variant": "sg32",
-      "library": "sg32/SmolLM3-3B-q4f16_1_cs1k-webgpu.wasm",
-      "library_sha256": "794c2d148308df4346049d1f3b31089caca2566602415089b4e7fde312fc897e",
-      "parameter_count": 363,
-      "symbolic_dimensions": {
-        "vocab_size": 128256
-      },
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "SmolLM3-3B-q4f32_1-MLC",
-      "variant": "sg32",
-      "library": "sg32/SmolLM3-3B-q4f32_1_cs1k-webgpu.wasm",
-      "library_sha256": "ba1ecabc8c4a637989a8df410b624897c9d4cdb58be59b3beb875755960a4ebd",
-      "parameter_count": 363,
-      "symbolic_dimensions": {
-        "vocab_size": 128256
-      },
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "LFM2.5-1.2B-Instruct-q4f16_1-MLC",
-      "variant": "sg32",
-      "library": "sg32/LFM2.5-1.2B-Instruct-q4f16_1_cs1k-webgpu.wasm",
-      "library_sha256": "8588fcf147ba55674b2a1577f72e8c9557498c7745dada000a479bb9193dc01c",
-      "parameter_count": 185,
-      "symbolic_dimensions": {},
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "LFM2.5-1.2B-Instruct-q4f32_1-MLC",
-      "variant": "sg32",
-      "library": "sg32/LFM2.5-1.2B-Instruct-q4f32_1_cs1k-webgpu.wasm",
-      "library_sha256": "c4a4122f6bae6228c5c08e5585ed571d13db3c17d55625ed5456573557d08f44",
-      "parameter_count": 185,
-      "symbolic_dimensions": {},
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "LFM2.5-350M-q4f16_1-MLC",
-      "variant": "sg32",
-      "library": "sg32/LFM2.5-350M-q4f16_1_cs1k-webgpu.wasm",
-      "library_sha256": "1f56d9049e1be4624cdf01acf3788f2d89fc7428f54274044193f5d9351571db",
-      "parameter_count": 185,
-      "symbolic_dimensions": {},
-      "status": "passed",
-      "errors": []
-    },
-    {
-      "model_id": "LFM2.5-350M-q4f32_1-MLC",
-      "variant": "sg32",
-      "library": "sg32/LFM2.5-350M-q4f32_1_cs1k-webgpu.wasm",
-      "library_sha256": "c467dba991729fe2b6a9865e131a1cf3d4bc12d2208f518c9a3a7684f1ebf0d6",
-      "parameter_count": 185,
       "symbolic_dimensions": {},
       "status": "passed",
       "errors": []
