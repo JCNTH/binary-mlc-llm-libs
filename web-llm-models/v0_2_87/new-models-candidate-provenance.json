@@ -35,7 +35,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f16_1",
-      "variant": "base"
+      "variant": "base",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/LFM2.5-350M-q4f16_1-MLC",
+        "revision": "12f2e8e6e3d39b8b60bd330fea1230b02bd20335",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "sg32/LFM2.5-350M-q4f16_1_cs1k-webgpu.wasm",
@@ -47,7 +52,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f16_1",
-      "variant": "sg32"
+      "variant": "sg32",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/LFM2.5-350M-q4f16_1-MLC",
+        "revision": "12f2e8e6e3d39b8b60bd330fea1230b02bd20335",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "base/LFM2.5-350M-q4f32_1_cs1k-webgpu.wasm",
@@ -59,7 +69,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f32_1",
-      "variant": "base"
+      "variant": "base",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/LFM2.5-350M-q4f32_1-MLC",
+        "revision": "0b6a1b10266375267967f5457fba2aa130bd6274",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "sg32/LFM2.5-350M-q4f32_1_cs1k-webgpu.wasm",
@@ -71,7 +86,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f32_1",
-      "variant": "sg32"
+      "variant": "sg32",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/LFM2.5-350M-q4f32_1-MLC",
+        "revision": "0b6a1b10266375267967f5457fba2aa130bd6274",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "base/LFM2.5-1.2B-Instruct-q4f16_1_cs1k-webgpu.wasm",
@@ -83,7 +103,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f16_1",
-      "variant": "base"
+      "variant": "base",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/LFM2.5-1.2B-Instruct-q4f16_1-MLC",
+        "revision": "5ee9872852480fda71940dbc384ef11bd48347d1",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "sg32/LFM2.5-1.2B-Instruct-q4f16_1_cs1k-webgpu.wasm",
@@ -95,7 +120,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f16_1",
-      "variant": "sg32"
+      "variant": "sg32",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/LFM2.5-1.2B-Instruct-q4f16_1-MLC",
+        "revision": "5ee9872852480fda71940dbc384ef11bd48347d1",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "base/LFM2.5-1.2B-Instruct-q4f32_1_cs1k-webgpu.wasm",
@@ -107,7 +137,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f32_1",
-      "variant": "base"
+      "variant": "base",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/LFM2.5-1.2B-Instruct-q4f32_1-MLC",
+        "revision": "330583f9f70d886a820ca6a0957004e9ef6ddea3",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "sg32/LFM2.5-1.2B-Instruct-q4f32_1_cs1k-webgpu.wasm",
@@ -119,7 +154,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f32_1",
-      "variant": "sg32"
+      "variant": "sg32",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/LFM2.5-1.2B-Instruct-q4f32_1-MLC",
+        "revision": "330583f9f70d886a820ca6a0957004e9ef6ddea3",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "base/MiniCPM5-2B-q4f16_1_cs1k-webgpu.wasm",
@@ -131,7 +171,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f16_1",
-      "variant": "base"
+      "variant": "base",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/MiniCPM5-2B-q4f16_1-MLC",
+        "revision": "dde85332796a9d8c050290f0b3aae524159a3bb4",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "sg32/MiniCPM5-2B-q4f16_1_cs1k-webgpu.wasm",
@@ -143,7 +188,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f16_1",
-      "variant": "sg32"
+      "variant": "sg32",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/MiniCPM5-2B-q4f16_1-MLC",
+        "revision": "dde85332796a9d8c050290f0b3aae524159a3bb4",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "base/MiniCPM5-2B-q4f32_1_cs1k-webgpu.wasm",
@@ -155,7 +205,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f32_1",
-      "variant": "base"
+      "variant": "base",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/MiniCPM5-2B-q4f32_1-MLC",
+        "revision": "3824dc9537bfc016cd65a8899f394e66834bae83",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "sg32/MiniCPM5-2B-q4f32_1_cs1k-webgpu.wasm",
@@ -167,7 +222,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f32_1",
-      "variant": "sg32"
+      "variant": "sg32",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/MiniCPM5-2B-q4f32_1-MLC",
+        "revision": "3824dc9537bfc016cd65a8899f394e66834bae83",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "base/SmolLM3-3B-q4f16_1_cs1k-webgpu.wasm",
@@ -179,7 +239,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f16_1",
-      "variant": "base"
+      "variant": "base",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/SmolLM3-3B-q4f16_1-MLC",
+        "revision": "f7d3b5969099d8b4ed0f8c9fc5fb2fc71ad00df0",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "sg32/SmolLM3-3B-q4f16_1_cs1k-webgpu.wasm",
@@ -191,7 +256,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f16_1",
-      "variant": "sg32"
+      "variant": "sg32",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/SmolLM3-3B-q4f16_1-MLC",
+        "revision": "f7d3b5969099d8b4ed0f8c9fc5fb2fc71ad00df0",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "base/SmolLM3-3B-q4f32_1_cs1k-webgpu.wasm",
@@ -203,7 +273,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f32_1",
-      "variant": "base"
+      "variant": "base",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/SmolLM3-3B-q4f32_1-MLC",
+        "revision": "937a5643a18508476321c6cf84f18f47124294b5",
+        "path": "mlc-chat-config.json"
+      }
     },
     {
       "path": "sg32/SmolLM3-3B-q4f32_1_cs1k-webgpu.wasm",
@@ -215,7 +290,12 @@
       "prefill_chunk_size": 1024,
       "parameter_schema": "passed",
       "quantization": "q4f32_1",
-      "variant": "sg32"
+      "variant": "sg32",
+      "config_source": {
+        "repository": "https://huggingface.co/mlc-ai/SmolLM3-3B-q4f32_1-MLC",
+        "revision": "937a5643a18508476321c6cf84f18f47124294b5",
+        "path": "mlc-chat-config.json"
+      }
     }
   ]
 }
